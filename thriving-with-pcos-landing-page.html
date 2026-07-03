@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thriving With PCOS: A Practical Guide for Nigerian Women</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum-950:#25091f;
+    --plum-800:#4a1942;
+    --plum-700:#5e2154;
+    --gold-500:#c9971f;
+    --gold-300:#e3bf6b;
+    --rose-200:#f3d4c9;
+    --ivory:#faf2e4;
+    --ink:#241220;
+    --ink-soft:#5b4756;
+    --cream:#fbf3e9;
+    --line: rgba(36,18,32,0.12);
+    --shadow: 0 30px 60px -25px rgba(37,9,31,0.45);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Public Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; line-height:1.08; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-family:'Public Sans', sans-serif;
+    font-size:12.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .eyebrow::before{content:""; width:20px; height:1px; background:currentColor; opacity:0.6;}
+
+  /* ---------- pattern ---------- */
+  .pattern{
+    position:absolute; inset:0; opacity:0.10; pointer-events:none;
+    background-image:
+      radial-gradient(circle at 10px 10px, var(--gold-300) 2px, transparent 2.6px),
+      radial-gradient(circle at 34px 34px, var(--gold-300) 2px, transparent 2.6px);
+    background-size:48px 48px;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(37,9,31,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1140px; margin:0 auto;}
+  .logo{font-family:'Fraunces', serif; color:var(--cream); font-size:19px; font-weight:600; letter-spacing:-0.01em;}
+  .logo span{color:var(--gold-300); font-style:italic;}
+  .nav-cta{
+    font-size:13.5px; font-weight:700; color:var(--plum-950); background:var(--gold-300);
+    padding:10px 20px; border-radius:100px; text-decoration:none; letter-spacing:0.01em;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-1px); box-shadow:0 8px 20px -8px rgba(201,151,31,0.6);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; overflow:hidden;
+    background:radial-gradient(120% 100% at 100% 0%, var(--plum-700) 0%, var(--plum-800) 45%, var(--plum-950) 100%);
+    color:var(--cream);
+    padding:88px 0 100px;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.05fr 0.75fr; gap:56px; align-items:center; position:relative; z-index:2;
+  }
+  .hero .eyebrow{color:var(--gold-300);}
+  .hero h1{
+    font-size:clamp(34px, 4.6vw, 54px); margin:22px 0 22px; max-width:11ch;
+  }
+  .hero h1 em{color:var(--gold-300); font-style:italic; font-weight:500;}
+  .hero p.lede{
+    font-size:18px; color:rgba(251,243,233,0.82); max-width:46ch; margin-bottom:34px;
+  }
+  .cta-row{display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  .btn-primary{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--gold-300); color:var(--plum-950); font-weight:700; font-size:15px;
+    padding:15px 26px; border-radius:100px; text-decoration:none;
+    box-shadow:0 16px 30px -14px rgba(201,151,31,0.7);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 20px 36px -14px rgba(201,151,31,0.85);}
+  .btn-secondary{
+    font-size:14.5px; font-weight:600; color:var(--cream); text-decoration:none;
+    border-bottom:1px solid rgba(251,243,233,0.4); padding-bottom:2px;
+  }
+  .trust-row{
+    display:flex; gap:26px; margin-top:44px; flex-wrap:wrap; font-size:13px; color:rgba(251,243,233,0.65);
+  }
+  .trust-row div{display:flex; align-items:center; gap:8px;}
+  .trust-dot{width:6px; height:6px; border-radius:50%; background:var(--gold-300);}
+
+  .hero-cover{position:relative;}
+  .cover-card{
+    position:relative; background:var(--cream); padding:14px; border-radius:6px;
+    transform:rotate(2.5deg); box-shadow:var(--shadow); max-width:340px; margin:0 auto;
+  }
+  .cover-card img{border-radius:2px;}
+  .cover-tag{
+    position:absolute; bottom:-16px; left:-16px; background:var(--gold-300); color:var(--plum-950);
+    font-family:'Fraunces', serif; font-weight:700; font-size:13px; padding:10px 16px; border-radius:6px;
+    transform:rotate(-4deg); box-shadow:0 10px 22px -10px rgba(0,0,0,0.5);
+  }
+
+  /* ---------- section shell ---------- */
+  section{padding:96px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head .eyebrow{color:var(--gold-500);}
+  .section-head h2{font-size:clamp(28px, 3.4vw, 40px); margin-top:16px;}
+  .section-head p{color:var(--ink-soft); font-size:16.5px; margin-top:16px; max-width:52ch;}
+
+  /* ---------- checklist (signature) ---------- */
+  .checklist-section{
+    background:var(--ivory); position:relative; overflow:hidden;
+  }
+  .checklist-board{
+    position:relative; background:var(--cream); border:1px solid var(--line); border-radius:14px;
+    padding:44px 40px 40px; box-shadow:0 40px 70px -45px rgba(37,9,31,0.35); max-width:820px; margin:0 auto;
+  }
+  .checklist-board::before{
+    content:""; position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+    width:64px; height:22px; background:var(--gold-300); border-radius:4px;
+    box-shadow:0 6px 14px -6px rgba(0,0,0,0.35);
+  }
+  .checklist-title{font-family:'Fraunces', serif; font-size:24px; font-weight:600; margin-bottom:6px;}
+  .checklist-sub{color:var(--ink-soft); font-size:14.5px; margin-bottom:28px;}
+  .checklist-items{list-style:none; display:grid; gap:2px;}
+  .checklist-items li{
+    display:flex; align-items:center; gap:16px; padding:15px 6px; border-bottom:1px dashed var(--line);
+    cursor:pointer; user-select:none;
+  }
+  .checklist-items li:last-child{border-bottom:none;}
+  .box{
+    width:22px; height:22px; flex:0 0 22px; border:2px solid var(--plum-700); border-radius:5px;
+    display:flex; align-items:center; justify-content:center; transition:background .15s ease, border-color .15s ease;
+  }
+  .box svg{width:13px; height:13px; opacity:0; transform:scale(0.6); transition:opacity .12s ease, transform .12s ease;}
+  li.checked .box{background:var(--plum-700);}
+  li.checked .box svg{opacity:1; transform:scale(1);}
+  li.checked span.label{color:var(--ink-soft); text-decoration:line-through; text-decoration-color:var(--gold-500);}
+  .checklist-items span.label{font-size:15.5px; font-weight:500;}
+  .checklist-result{
+    margin-top:26px; padding:20px 22px; border-radius:10px; background:var(--plum-800); color:var(--cream);
+    font-size:14.5px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    transition:background .2s ease;
+  }
+  .checklist-result strong{font-family:'Fraunces', serif; font-weight:600; font-size:16px; display:block; color:var(--gold-300);}
+  .checklist-result a{
+    font-weight:700; font-size:13.5px; background:var(--gold-300); color:var(--plum-950);
+    padding:10px 18px; border-radius:100px; text-decoration:none; white-space:nowrap;
+  }
+
+  /* ---------- what's inside ---------- */
+  .inside{background:var(--cream);}
+  .inside-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:flex-start;}
+  .topics{list-style:none; display:grid; gap:0;}
+  .topics li{
+    display:grid; grid-template-columns:44px 1fr; gap:18px; padding:22px 0; border-top:1px solid var(--line);
+  }
+  .topics li:last-child{border-bottom:1px solid var(--line);}
+  .topic-num{font-family:'Fraunces', serif; font-style:italic; color:var(--gold-500); font-size:20px;}
+  .topic-title{font-weight:700; font-size:16px; margin-bottom:4px;}
+  .topic-desc{color:var(--ink-soft); font-size:14.5px;}
+
+  .why-card{
+    background:var(--plum-800); color:var(--cream); border-radius:14px; padding:36px 34px; margin-bottom:20px;
+    position:relative; overflow:hidden;
+  }
+  .why-card h3{font-size:20px; margin-bottom:10px; color:var(--gold-300);}
+  .why-card p{font-size:14.5px; color:rgba(251,243,233,0.85);}
+  .why-stats{display:flex; gap:28px; margin-top:26px; flex-wrap:wrap;}
+  .why-stats div strong{display:block; font-family:'Fraunces', serif; font-size:26px; color:var(--gold-300);}
+  .why-stats div span{font-size:12.5px; color:rgba(251,243,233,0.65);}
+
+  /* ---------- author ---------- */
+  .author{background:var(--rose-200);}
+  .author-grid{display:grid; grid-template-columns:220px 1fr; gap:44px; align-items:center;}
+  .author-photo{
+    width:220px; height:220px; border-radius:50%; background:var(--plum-800);
+    display:flex; align-items:center; justify-content:center; color:var(--gold-300);
+    font-family:'Fraunces', serif; font-size:56px; font-weight:600; border:6px solid var(--cream);
+    box-shadow:var(--shadow);
+  }
+  .author h2{font-size:clamp(24px,3vw,32px); margin-bottom:14px;}
+  .author p{color:var(--ink-soft); max-width:56ch; font-size:15.5px;}
+  .author-tag{
+    display:inline-block; margin-top:18px; font-size:12.5px; font-weight:700; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--plum-800);
+  }
+
+  /* ---------- final cta ---------- */
+  .final-cta{
+    background:radial-gradient(120% 140% at 0% 0%, var(--plum-700), var(--plum-950) 65%);
+    color:var(--cream); text-align:center; position:relative; overflow:hidden;
+  }
+  .final-cta .wrap{position:relative; z-index:2;}
+  .final-cta h2{font-size:clamp(30px,4vw,46px); max-width:16ch; margin:18px auto 18px;}
+  .final-cta p{color:rgba(251,243,233,0.78); max-width:50ch; margin:0 auto 34px; font-size:16.5px;}
+  .final-cta .eyebrow{color:var(--gold-300); justify-content:center;}
+
+  footer{background:var(--plum-950); color:rgba(251,243,233,0.55); padding:32px 0; font-size:13px;}
+  .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr; gap:48px;}
+    .hero-cover{order:-1;}
+    .inside-grid{grid-template-columns:1fr;}
+    .author-grid{grid-template-columns:1fr; text-align:center; justify-items:center;}
+    section{padding:72px 0;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Thriving<span>WithPCOS</span></div>
+    <a class="nav-cta" href="https://selar.com/uco57y7r78" target="_blank" rel="noopener">Get the book</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="pattern"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">A guide written for Nigerian women</span>
+      <h1>PCOS doesn't come with a manual. <em>Now it does.</em></h1>
+      <p class="lede">Irregular periods, stubborn weight, acne, unwanted hair growth: you've heard "just lose weight" more times than you can count, with no real plan to get there. <strong>Thriving With PCOS</strong> is the practical, evidence-based handbook that finally explains what's happening in your body and what to actually do about it.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://selar.com/uco57y7r78" target="_blank" rel="noopener">Get your copy on Selar →</a>
+        <a class="btn-secondary" href="#inside">See what's inside</a>
+      </div>
+      <div class="trust-row">
+        <div><span class="trust-dot"></span> Written by a physician</div>
+        <div><span class="trust-dot"></span> Built for the Nigerian diet &amp; healthcare system</div>
+        <div><span class="trust-dot"></span> Instant digital download</div>
+      </div>
+    </div>
+    <div class="hero-cover">
+      <div class="cover-card">
+        <img src="https://files.selar.co/product-images/2026/products/olajiire-olajide1/thriving-with-pcos-a-prac-selar.com-6a42d32f1ce5f.png" alt="Thriving With PCOS book cover">
+        <div class="cover-tag">Now available</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="checklist-section">
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 48px; text-align:center;">
+      <span class="eyebrow" style="justify-content:center;">A quick gut check</span>
+      <h2>Does this sound like you?</h2>
+      <p style="margin-left:auto; margin-right:auto;">Tick anything that feels familiar. Most women with PCOS have lived with two or more of these for years before anyone gave them a straight answer.</p>
+    </div>
+
+    <div class="checklist-board">
+      <div class="checklist-title">Common signs of PCOS</div>
+      <div class="checklist-sub">Not a diagnosis, just a starting point for a conversation with yourself, and maybe your doctor.</div>
+      <ul class="checklist-items" id="checklist">
+        <li data-label="Irregular or missing periods"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Irregular or missing periods</span></li>
+        <li data-label="Weight that won't shift no matter what you try"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Weight that won't shift no matter what you try</span></li>
+        <li data-label="Acne that won't clear up"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Acne that won't clear up</span></li>
+        <li data-label="Unwanted hair growth on your face or body"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Unwanted hair growth on your face or body</span></li>
+        <li data-label="Trying to conceive without much luck"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Trying to conceive without much luck</span></li>
+        <li data-label="Tired, moody, or anxious more days than not"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5L20 6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="label">Tired, moody, or anxious more days than not</span></li>
+      </ul>
+      <div class="checklist-result">
+        <div id="resultText"><strong>Start ticking above.</strong> Roughly 1 in 6 Nigerian women live with PCOS, many without knowing it.</div>
+        <a href="https://selar.com/uco57y7r78" target="_blank" rel="noopener">Get the guide</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inside" id="inside">
+  <div class="wrap inside-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:32px;">
+        <span class="eyebrow">What's inside</span>
+        <h2>A plan you can actually follow</h2>
+        <p>No miracle cures, no guilt-tripping. Just a clear map of what PCOS is, why it shows up the way it does, and what to change first.</p>
+      </div>
+      <ul class="topics">
+        <li>
+          <span class="topic-num">01</span>
+          <div><div class="topic-title">Understanding your diagnosis</div><div class="topic-desc">What PCOS actually is, how it's confirmed, and what your test results mean.</div></div>
+        </li>
+        <li>
+          <span class="topic-num">02</span>
+          <div><div class="topic-title">Eating for PCOS, the Nigerian way</div><div class="topic-desc">Practical swaps using local staples, no imported superfoods required.</div></div>
+        </li>
+        <li>
+          <span class="topic-num">03</span>
+          <div><div class="topic-title">Managing symptoms day to day</div><div class="topic-desc">Skin, hair, weight, and energy: what helps, and what's just noise.</div></div>
+        </li>
+        <li>
+          <span class="topic-num">04</span>
+          <div><div class="topic-title">Fertility and family planning</div><div class="topic-desc">What PCOS means for conceiving, and when to see a specialist.</div></div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="why-card">
+        <h3>Why this guide is different</h3>
+        <p>Most PCOS resources are written for a diet, a healthcare system, and a body of research that doesn't reflect life in Nigeria. This one closes that gap: grounded in evidence, but built around real Nigerian food, real access-to-care realities, and real cultural pressure around fertility and weight.</p>
+        <div class="why-stats">
+          <div><strong>1 in 6</strong><span>Nigerian women affected</span></div>
+          <div><strong>Yrs</strong><span>often spent undiagnosed</span></div>
+          <div><strong>1</strong><span>clear, practical plan</span></div>
+        </div>
+      </div>
+      <div class="why-card" style="background:var(--cream); color:var(--ink); border:1px solid var(--line);">
+        <h3 style="color:var(--plum-800);">Who it's for</h3>
+        <p style="color:var(--ink-soft);">Newly diagnosed and overwhelmed. Diagnosed years ago and still confused. Or simply recognising the signs and wanting answers before your next hospital visit. This book meets you where you are.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="author">
+  <div class="wrap author-grid">
+    <div class="author-photo">OO</div>
+    <div>
+      <span class="eyebrow" style="color:var(--plum-800);">Written by</span>
+      <h2>Dr. Olajiire Olajide</h2>
+      <p>Dr. Olajide wrote Thriving With PCOS to be the resource she wished more of her own patients had: practical, judgement-free, and built specifically around the realities of managing PCOS in Nigeria.</p>
+      <span class="author-tag">Author · Thriving With PCOS</span>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="pattern"></div>
+  <div class="wrap">
+    <span class="eyebrow">Thriving With PCOS</span>
+    <h2>Stop guessing. Start with a plan that fits your life.</h2>
+    <p>Get instant access to the guide and start understanding your body today: evidence-based, practical, and written for you.</p>
+    <a class="btn-primary" href="https://selar.com/uco57y7r78" target="_blank" rel="noopener">Get your copy on Selar →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>Thriving With PCOS · A Practical Management Guide for Nigerian Women</span>
+    <span>This page is for general information and does not replace medical advice.</span>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('#checklist li');
+  const resultText = document.getElementById('resultText');
+  const messages = [
+    "Start ticking above. Roughly 1 in 6 Nigerian women live with PCOS, many without knowing it.",
+    "That's one sign. Worth a closer look.",
+    "Two signs checked. This is exactly what the book was written to untangle.",
+    "Three or more, and that's not a coincidence. It's a pattern worth understanding.",
+    "Several signs checked. You're not alone, and you don't have to keep guessing.",
+    "Most of the list checked. This book was written with you in mind.",
+    "Every sign checked. Time to get real answers, not another '\''just lose weight'\''."
+  ];
+  items.forEach(li => {
+    li.addEventListener('click', () => {
+      li.classList.toggle('checked');
+      const count = document.querySelectorAll('#checklist li.checked').length;
+      const idx = Math.min(count, messages.length - 1);
+      resultText.innerHTML = `<strong>${count} of ${items.length} signs checked.</strong> ${messages[idx]}`;
+    });
+  });
+</script>
+
+</body>
+</html>
